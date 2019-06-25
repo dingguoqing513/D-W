@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D&W</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .love-box {
+            width: 360px;
+            height: 202px;
+            line-height: 60px;
+            color: #333;
+            font-size: 16px;
+            background: url('./images/changdao.jpeg') no-repeat;
+            background-size: 100%;
+            text-align: center;
+            color: white;
+            transition: all .6s;
+            position: relative;
+        }
+
+        .love-box:hover {
+            background-size: 103%;
+            transition: all .6s;
+        }
+
+        .love-time {
+            font-size: 20px;
+            margin: 0 5px;
+        }
+
+        .love {
+            width: 30px;
+            height: 50px;
+            background: tomato;
+            display: inline-block;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transform: rotate(-45deg);
+            margin-left: 30px;
+            vertical-align: middle;
+            box-shadow: -5px -5px 10px #666;
+            animation: jumpOut .6s ease-out infinite;
+            transform: scale(1) rotate(-45deg);
+            cursor: pointer;
+        }
+
+        .love:before {
+            content: '';
+            width: 30px;
+            height: 50px;
+            display: inline-block;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background: tomato;
+            position: relative;
+            left: 10px;
+            top: 10px;
+            transform: scale(1) rotate(90deg);
+            cursor: pointer;
+        }
+
+        .love-line {
+            width: 1px;
+            height: 1px;
+            background: tomato;
+            display: inline-block;
+            position: absolute;
+            top: 47px;
+            right: 71px;
+            transition: all 1s;
+        }
+
+        .love:hover+.love-line {
+            width: 117px;
+            background: tomato;
+            transition: all 1s;
+        }
+
+        .love:hover+.love-time {
+            -webkit-mask-image: gradient(linear,center top,center bottom,color-stop(0,transparent),color-stop(.3,#000),color-stop(1,#000));
+
+        }
+
+        @keyframes jumpOut {
+            0% { transform: scale(.85) rotate(-45deg); }
+            100% {transform: scale(1) rotate(-45deg); }
+        }
+        
+        @-webkit-keyframes masked-animation {
+            0%  { background-position: 0 0;}
+            100% { background-position: -100% 0;}
+        }
+
+        @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+            .love-time{
+                background-image: -webkit-linear-gradient(left, #ff9a9e, #f6f3ff 25%, #ff9a9e 50%, #f6f3ff 75%, #ff9a9e);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                -webkit-background-size: 200% 100%;
+                -webkit-animation: masked-animation 4s infinite linear;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="love-box">
+        我们已经相恋了
+        <span class="love-time"></span>天
+        <span class="love"></span>
+        <span class="love-line"></span>
+    </div>
+</body>
+<script src="./src/dw.js"></script>
+</html>

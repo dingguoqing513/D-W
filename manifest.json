@@ -1,0 +1,20 @@
+{
+    "name": "D&W",
+    "version": "5.2.1",
+    "description": "D 💗W",
+    "manifest_version": 2,
+    "permissions": ["tabs"],
+    "icons": {
+        "16": "images/love.png",
+        "48": "images/love.png",
+        "128": "images/love.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "images/love.png",
+            "38": "images/love.png"
+        },
+        "default_title": "D&W",
+        "default_popup": "love.html"
+    }
+}
